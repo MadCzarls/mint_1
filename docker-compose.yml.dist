@@ -1,0 +1,29 @@
+version:  '3.8'
+
+services:
+    php:
+        build:
+            context: docker/php
+            dockerfile: Dockerfile
+            network: host
+            args:
+                ENV: dev # change according to your needs
+                TIMEZONE: Europe/Warsaw # change according to your needs
+        container_name: 'mint.php'
+        expose:
+            - '9000'
+        restart: on-failure
+        env_file:
+            - docker/php/.env.web.dev # change according to your needs
+            - docker/php/.env.app.dev # change according to your needs
+        volumes:
+            - './app/:/var/www/app:cached'
+        networks:
+            - app_network
+
+networks:
+    app_network:
+        driver: bridge
+        ipam:
+            config:
+                - subnet: 172.16.57.0/24

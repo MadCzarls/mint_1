@@ -1,0 +1,17 @@
+/.idea
+
+###
+
+logs/*
+docker-compose.yml
+
+###
+
+app/bin/.phpunit
+app/vendor
+
+app/.phpunit
+app/.phpunit.result.cache
+app/phpunit.xml
+app/phpcs.xml
+app/.phpcs-cache

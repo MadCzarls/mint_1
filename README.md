@@ -32,10 +32,9 @@ Or you can use example files:
 php src/run.php mint:one files/tree\ \(1\).json files/list\ \(1\).json 
 </pre>
 
-Output file saves in `files/output.json`. 
+Output file saved in `files/output.json`. 
 
 # PHPUnit
-To execute tests run command:
-<pre>
-./vendor/bin/phpunit tests/
-</pre>
+To execute tests run:
+1. docker exec -it mint.php bash
+1. ./vendor/bin/phpunit tests/
